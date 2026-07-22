@@ -1,0 +1,1 @@
+export {FootballLeague} from './ui/FootballLeague'
