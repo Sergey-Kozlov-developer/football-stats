@@ -10,6 +10,9 @@
 	--color-accent: #22A0BC;
 	--color-success-green: #C6F4C6;
 
+  	--color-hover-link: #00AB00;
+  	--color-active-link: #008D00;
+
 
 	--color-bg: var(--color-05);
 
@@ -27,8 +30,7 @@
 	--border: #{rem(1)} solid var(--color-04);
 	--border-input: #{rem(1)} solid var(--color-gray-600);
 
-	--font-family-base: "Manrope", sans-serif;
-	--font-family-logo: "Inter", sans-serif;
+	--font-family-base: "Unbounded", sans-serif;
 
 	--container-width: #{rem(1240)};
 	// внутренние границы(можно посмотреть по mobile макету)

@@ -11,7 +11,7 @@ body {
 
     display: flex;
     flex-direction: column;
-    font-family: var(--font-family-base);
+    font-family: var(--font-family-base), 'sans-serif';
     letter-spacing: -0.03em;
     color: var(--color-gray-50);
     background-color: var(--color-bg);
@@ -42,7 +42,7 @@ h2,
 .h2,
 h3,
 .h3 {
-    font-family: var(--font-family-accent);
+    font-family: var(--font-family-base), 'sans-serif';
     font-weight: 500;
 }
 
@@ -107,7 +107,7 @@ a {
     color: inherit;
 
     @include hover {
-        color: var(--color-accent);
+        color: var(--color-hover-link);
     }
     // отмена подчеркивания если в сылке есть class
     &[class] {
