@@ -1,1 +1,1 @@
-export {FootballTeams} from './ui/FootballTeams'
+export {TeamsPage} from './ui/TeamsPage.tsx'

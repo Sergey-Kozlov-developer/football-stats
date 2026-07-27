@@ -1,0 +1,1 @@
+export {FootballTeams} from './ui/FootballTeams.tsx'

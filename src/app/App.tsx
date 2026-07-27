@@ -1,5 +1,5 @@
 import {Route, Routes} from "react-router";
-import {FootballTeams} from "@pages/teams";
+import {TeamsPage} from "@pages/teams";
 import AppLayout from "@app/layout-app/ui/AppLayout.tsx";
 import {FootballPlayers} from "@pages/players";
 import {FootballLeague} from "@pages/league";
@@ -12,7 +12,7 @@ function App() {
 		<>
 			<Routes>
 				<Route path='/' element={<AppLayout/>}>
-					<Route index element={<FootballTeams/>}/>
+					<Route index element={<TeamsPage/>}/>
 					<Route path="/leagues" element={<FootballLeague/>}/>
 					<Route path="/players" element={<FootballPlayers/>}/>
 				</Route>

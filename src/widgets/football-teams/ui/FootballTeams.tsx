@@ -1,18 +1,18 @@
+import TeamCard from "@widgets/football-teams/ui/team-card/TeamCard.tsx";
 import {useGetTeamsQuery} from "@entities/teams/api/teamsApi.ts";
 
 export const FootballTeams = () => {
 	const {data, isLoading, isError} = useGetTeamsQuery()
-	console.log(data)
 	return (
 		<div>
-			<h1>FootballTeams</h1>
-				{data?.map((item) => (
-					<div key={item.id}>
-						<h1>{item.name}</h1>
-					</div>
-					))}
+			<h1>FootballTeam</h1>
+				{data?.map((team) => (
+					<div key={team.id}>
 
+					<TeamCard team={team} />
+					</div>
+
+					))}
 		</div>
 	);
 };
-
