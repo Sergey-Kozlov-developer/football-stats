@@ -28,6 +28,7 @@ export const NavigationWidget = () => {
 				toggled={toggled}
 				breakPoint='all'
 				className={`${styles.sidebar}`}
+				width={'300px'}
 			>
 				<Menu>
 					{navItems.map((item) => (
@@ -40,7 +41,7 @@ export const NavigationWidget = () => {
 								className={({ isActive }) =>
 									isActive
 										? `${styles.active}`
-										: ''
+										: `${styles.link}`
 								}
 							>
 								{item.label}

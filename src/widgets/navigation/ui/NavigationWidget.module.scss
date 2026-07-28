@@ -1,10 +1,19 @@
 @use '../../../shared/styles/base/helpers' as *;
 
+.sidebar {
+  height: 100%;
+
+  background: linear-gradient(180deg, rgba(166,240,255,1) 0%, rgba(220,250,255,1) 49%, rgba(230,252,255,1) 100%);
+}
+
+.link {
+  font-size: rem(16);
+  font-weight: 400;
+}
 
 .active {
   color: var(--color-accent);
+  font-size: rem(16);
+  font-weight: 600;
 }
-.sidebar {
-  height: 100%;
-  background: linear-gradient(180deg, rgba(166,240,255,1) 0%, rgba(220,250,255,1) 49%, rgba(230,252,255,1) 100%);
-}
+
