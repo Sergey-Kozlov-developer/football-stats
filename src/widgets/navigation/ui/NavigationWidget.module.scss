@@ -1,44 +1,10 @@
 @use '../../../shared/styles/base/helpers' as *;
 
-.header {
-  padding-top: rem(18);
-  padding-bottom: rem(18);
-  position: sticky;
-  z-index: 100;
-  top: 0;
-  width: 100%;
 
-  animation-name: scrolling-header;
-  animation-fill-mode: both;
-  animation-timeline: scroll();
-  animation-range: rem(100) rem(200);
-  background: var(--color-white);
-
-  @keyframes scrolling-header {
-	to {
-	  background-color: var(--color-bg);
-	  border-color: var(--color-yellow);
-	}
-  }
-
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  width: rem(60);
-}
-
-.navList {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: rem(20);
-}
 .active {
-  color: var(--color-active-link);
+  color: var(--color-accent);
+}
+.sidebar {
+  height: 100%;
+  background: linear-gradient(180deg, rgba(166,240,255,1) 0%, rgba(220,250,255,1) 49%, rgba(230,252,255,1) 100%);
 }

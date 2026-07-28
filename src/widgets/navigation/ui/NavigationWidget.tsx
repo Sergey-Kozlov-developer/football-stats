@@ -1,6 +1,8 @@
-import {NavLink} from "react-router";
+import {NavLink, useLocation} from "react-router";
 import styles from './NavigationWidget.module.scss';
-import logo from '@assets/img/logo.png'
+import footballImg from '@assets/img/football.webp'
+import {Menu, MenuItem, Sidebar} from "react-pro-sidebar";
+import {useState} from "react";
 
 const navItems = [
 	{to: "/", label: "Teams"},
@@ -8,24 +10,50 @@ const navItems = [
 	{to: "/players", label: "Players"},
 ]
 export const NavigationWidget = () => {
+	const location = useLocation();
+	const [toggled, setToggled] = useState(false);
+	const handleBoolean = () => {
+		setToggled(false);
+	}
+	const handleClickToggle = () => {
+		setToggled(!toggled);
+	}
 
 	return (
-		<header className={styles.header}>
-			<nav className={`${styles.nav} container`}>
-				<img className={styles.logo} src={logo} alt="Football"/>
-				<ul className={styles.navList}>
-					{navItems.map(navItem => (
-						<li key={navItem.to}>
+		<>
+			<Sidebar
+				image={footballImg}
+				transitionDuration={1000}
+				onBackdropClick={handleBoolean}
+				toggled={toggled}
+				breakPoint='all'
+				className={`${styles.sidebar}`}
+			>
+				<Menu>
+					{navItems.map((item) => (
+						<MenuItem
+							key={item.to}
+							active={location.pathname === item.to}
+						>
 							<NavLink
-								to={navItem.to}
-								className={({isActive}) => isActive ? `${styles.active}` : ''}>
-								{navItem.label}
+								to={item.to}
+								className={({ isActive }) =>
+									isActive
+										? `${styles.active}`
+										: ''
+								}
+							>
+								{item.label}
 							</NavLink>
-						</li>
+						</MenuItem>
 					))}
-
-				</ul>
-			</nav>
-		</header>
+				</Menu>
+			</Sidebar>
+			<div>
+				<button onClick={handleClickToggle}>
+					Toggle
+				</button>
+			</div>
+		</>
 	);
 };
