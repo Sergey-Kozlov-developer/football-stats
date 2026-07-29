@@ -4,6 +4,7 @@ import footballImg from '@assets/img/football.webp'
 import {Menu, MenuItem, Sidebar} from "react-pro-sidebar";
 import {getMenuItemStyles} from "@widgets/navigation/utils/getMenuItemStyles.ts";
 import {useSidebar} from "@features/sidebar/hook/useSideBarContext.tsx";
+import { useMemo} from "react";
 
 const navItems = [
 	{to: "/", label: "Teams"},
@@ -25,6 +26,18 @@ export const NavigationWidget = () => {
 		closeSidebar,
 	} = useSidebar()
 
+	const menuItems = useMemo(() =>
+		navItems.map((item) => (
+			<MenuItem
+				key={item.to}
+				active={location.pathname === item.to}
+				component={<NavLink to={item.to} className={getNavLinkClassName}/>}
+			>
+				{item.label}
+			</MenuItem>
+		))
+	, [location.pathname])
+
 	return (
 		<>
 			<Sidebar
@@ -32,30 +45,37 @@ export const NavigationWidget = () => {
 				transitionDuration={1000}
 				onBackdropClick={closeSidebar}
 				toggled={toggled}
-				collapsedWidth={'80px'}
-				breakPoint='all'
+				collapsed={collapsed}
+				onToggle={toggleCollapse}
+				breakPoint='md'
 				className={`${styles.sidebar}`}
-				width={'300px'}
+				collapsedWidth='80px'
+				width='300px'
 			>
+				<div className={styles.toggleButtonWrapper}>
+					<button
+						onClick={toggleCollapse}
+						className={styles.toggleButton}
+						aria-label={collapsed ? 'Развернуть меню' : 'Свернуть меню'}
+					>
+						{collapsed ? '→' : '←'}
+					</button>
+				</div>
 				<Menu menuItemStyles={{
 					button: getMenuItemStyles
 				}}>
-					{navItems.map((item) => (
-						<MenuItem
-							key={item.to}
-							active={location.pathname === item.to}
-							component={<NavLink to={item.to} className={getNavLinkClassName}/>}
-						>
-							{item.label}
-						</MenuItem>
-					))}
+					{menuItems}
 				</Menu>
 			</Sidebar>
-			<div>
-				<button onClick={toggleSidebar}>
-					Toggle
-				</button>
-			</div>
+			<button
+				onClick={toggleSidebar}
+				className={styles.mobileToggle}
+				aria-label="Открыть меню"
+			>
+				☰
+			</button>
+
 		</>
 	);
 };
+NavigationWidget.displayName = 'NavigationWidget';
