@@ -2,9 +2,10 @@
 
 .container {
   // четкая ширина контейнера по макету
-  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
-  margin-inline: auto;
-  padding-inline: var(--container-padding-x);
+  //max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  //margin-inline: auto;
+  //padding-inline: var(--container-padding-x);
+  padding: rem(30);
 }
 
 .visually-hidden {
