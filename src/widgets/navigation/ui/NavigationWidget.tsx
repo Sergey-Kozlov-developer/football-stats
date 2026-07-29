@@ -10,6 +10,7 @@ const navItems = [
 	{to: "/", label: "Teams"},
 	{to: "/leagues", label: "Leagues"},
 	{to: "/players", label: "Players"},
+	{to: "/favorites", label: "Favorite"},
 ]
 
 const getNavLinkClassName = ({isActive}: { isActive: boolean }) =>
