@@ -28,6 +28,7 @@
 
 	// переменная ширины border
 	--border: #{rem(1)} solid var(--color-04);
+	--border-button: #{rem(1)} solid var(--color-accent);
 	--border-input: #{rem(1)} solid var(--color-gray-600);
 
 	--font-family-base: "Unbounded", sans-serif;
