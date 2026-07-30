@@ -1,4 +1,4 @@
-import {createContext, type ReactNode, useContext, useEffect, useState} from "react";
+import {createContext, type ReactNode, useCallback, useContext, useEffect, useMemo, useState} from "react";
 
 
 interface FavoritesContextType {
@@ -11,7 +11,7 @@ const FavoritesContext = createContext<FavoritesContextType | undefined>(undefin
 
 export const FavoritesProvider = ({children}: { children: ReactNode }) => {
 	const [favoriteIds, setFavoriteIds] = useState<number[]>(() => {
-		const saved = localStorage.getItem('favoriteTeamId');
+		const saved = localStorage.getItem('favoriteTeamIds');
 		return saved ? JSON.parse(saved) : [];
 	});
 
@@ -19,20 +19,25 @@ export const FavoritesProvider = ({children}: { children: ReactNode }) => {
 		localStorage.setItem('favoriteTeamIds', JSON.stringify(favoriteIds));
 	}, [favoriteIds]);
 
-	const toggleFavorite = (id: number) => {
+	const toggleFavorite = useCallback((id: number) => {
 		setFavoriteIds((prev) => prev.includes(id) ? prev.filter((fid) => fid !== id) : [...prev, id]);
-	}
-	const isFavorite = (id: number) => favoriteIds.includes(id);
+	},[])
+
+	const isFavorite = useCallback((id: number) => favoriteIds.includes(id),[favoriteIds]);
+
+	const value = useMemo(() => ({
+		favoriteIds, toggleFavorite, isFavorite,
+	}), [favoriteIds, toggleFavorite, isFavorite]);
 
 	return (
-		<FavoritesContext.Provider value={{favoriteIds, toggleFavorite, isFavorite}}>
+		<FavoritesContext.Provider value={value}>
 			{children}
 		</FavoritesContext.Provider>
 	)
 
 };
 
-export const useFavorites = () => {
+export const useFavoritesContext = () => {
 	const context = useContext(FavoritesContext);
 	if (!context) {
 		throw new Error('useFavorites должен использоваться внутри FavoritesProvider');

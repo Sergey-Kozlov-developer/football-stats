@@ -1,12 +1,12 @@
 import TeamCard from "@widgets/football-teams/ui/team-card/TeamCard.tsx";
 import {useGetTeamsQuery} from "@entities/teams/api/teamsApi.ts";
 import styles from "./FootballTeams.module.scss";
-import {useFavorites} from "@features/favorite/hook/useFavoriteContext.tsx";
+import {useFavoritesContext} from "@features/favorite/hook/useFavoriteContext.tsx";
 
 
 export const FootballTeams = () => {
 	const {data, isLoading, isError} = useGetTeamsQuery()
-	const {toggleFavorite, isFavorite} = useFavorites()
+	const {toggleFavorite, isFavorite} = useFavoritesContext()
 
 	if (isLoading) return <div>Загрузка...</div>;
 	if (isError) return <div>Ошибка загрузки</div>;

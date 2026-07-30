@@ -1,11 +1,11 @@
 import {useGetTeamsQuery} from "@entities/teams/api/teamsApi.ts";
-import {useFavorites} from "@features/favorite/hook/useFavoriteContext.tsx";
+import {useFavoritesContext} from "@features/favorite/hook/useFavoriteContext.tsx";
 import TeamCard from "@widgets/football-teams/ui/team-card/TeamCard.tsx";
 import {useMemo} from "react";
 
 export const FavoritePage = () => {
 	const {data, isLoading, isError} = useGetTeamsQuery();
-	const {favoriteIds, toggleFavorite} = useFavorites()
+	const {favoriteIds, toggleFavorite} = useFavoritesContext()
 
 	const favorites = useMemo(() => data?.filter((item) => favoriteIds.includes(item.id)) || [], [favoriteIds,data]);
 
