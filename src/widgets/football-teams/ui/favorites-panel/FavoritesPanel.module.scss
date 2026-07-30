@@ -1,0 +1,104 @@
+@use '../../../../shared/styles/base/helpers' as *;
+
+.panel {
+  margin-bottom: rem(32);
+  padding: rem(16) rem(20);
+  border: var(--border);
+  border-radius: rem(12);
+  background-color: rgba(34, 160, 188, 0.06);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+  margin-bottom: rem(12);
+}
+
+.title {
+  font-size: rem(16);
+  font-weight: 600;
+}
+
+.count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: rem(24);
+  height: rem(24);
+  padding: 0 rem(8);
+  border-radius: rem(12);
+  background-color: rgba(34, 160, 188, 0.15);
+  color: #22A0BC;
+  font-size: rem(12);
+  font-weight: 600;
+}
+
+.empty {
+  margin: 0;
+  color: #666;
+  font-size: rem(14);
+}
+
+.list {
+  display: flex;
+  gap: rem(12);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: rem(10);
+  flex-shrink: 0;
+  min-width: rem(220);
+  padding: rem(10) rem(12);
+  border: var(--border);
+  border-radius: rem(8);
+  background-color: #fff;
+}
+
+.logo {
+  width: rem(32);
+  height: rem(32);
+  object-fit: contain;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: rem(14);
+  font-weight: 500;
+}
+
+.code {
+  font-size: rem(11);
+  color: #666;
+}
+
+.removeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: rem(4);
+  border: none;
+  background: transparent;
+  color: #22A0BC;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}

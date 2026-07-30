@@ -1,5 +1,20 @@
 @use '../../../shared/styles/base/helpers' as *;
 
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: rem(16);
+}
+
+.title {
+  margin: 0;
+}
+
+.sectionTitle {
+  margin: 0 0 rem(20);
+  font-size: rem(20);
+}
+
 .wrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
