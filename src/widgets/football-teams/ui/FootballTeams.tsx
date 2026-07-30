@@ -20,7 +20,7 @@ export const FootballTeams = () => {
 
 	return (
 		<div className={styles.page}>
-			<h1 className={styles.title}>FootballTeam</h1>
+			<h1 className={styles.title}>Football Team</h1>
 
 			<FavoritesPanel
 				favorites={favorites}

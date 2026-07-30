@@ -7,7 +7,7 @@
 }
 
 .title {
-  margin: 0;
+  margin: 0 auto;
 }
 
 .sectionTitle {
@@ -18,8 +18,18 @@
 .wrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 150px);
-  column-gap: rem(50);
-  row-gap: 50px;
+  column-gap: rem(20);
+  row-gap: rem(20);
   justify-items: stretch;
+
+  @include laptop {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include tablet-s {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

@@ -16,21 +16,47 @@
   justify-content: space-between;
 
 }
+.logo {
+  display: flex;
+  align-items: center;
+  gap: rem(20);
+
+
+  @include laptop {
+    gap: rem(10);
+  }
+}
 .flag {
   width: rem(40);
   height: rem(40);
+
+  @include laptop {
+    width: rem(30);
+    height: rem(30);
+  }
 }
 
 .name {
-  font-size: rem(24);
-}
-.code {
+  font-size: fluid(18, 14);
 
-  font-size: rem(12);
+  @include laptop {
+    font-size: fluid(18, 14);
+  }
 }
+
 .button {
   background-color: transparent;
   border: var(--border-button);
+  border-radius: rem(10);
+  font-size: rem(14);
+  padding: rem(10);
+
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background: var(--color-accent);
+  }
+
 }
 .buttonHeart {
   background: transparent;

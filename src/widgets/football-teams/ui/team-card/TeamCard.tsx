@@ -15,15 +15,16 @@ const TeamCard = ({team, isFavorite = false, onToggleFavorite}: ITeamCardProps) 
 	return (
 		<div className={styles.card}>
 			<div className={styles.title}>
-				<img className={styles.flag} src={team.logoUrl} alt="Country"/>
-				<h3 className={styles.name}>{team.name}</h3>
-				<span className={styles.code}>{team.country.code}</span>
+				<div className={styles.logo}>
+					<img className={styles.flag} src={team.logoUrl} alt="Country"/>
+					<h3 className={styles.name}>{team.name}</h3>
+				</div>
 				<button className={styles.buttonHeart} onClick={onToggleFavorite}>
-					{isFavorite ? <HeartOff /> : <Heart />}
+					{isFavorite ? <HeartOff/> : <Heart/>}
 				</button>
 			</div>
 			<button className={styles.button}>
-				Info
+				{team.country.code}
 			</button>
 		</div>
 	);

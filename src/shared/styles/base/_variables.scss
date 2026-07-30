@@ -2,11 +2,11 @@
 
 :root {
 	--color-white: #FDFDFD;
-	--color-05: #F4F4F4;
+	//--color-05: #F4F4F4;
 	--color-04: #DADADA;
-	--color-03: #9C9C9C;
-	--color-02: #595959;
-	--color-01: #161616;
+	//--color-03: #9C9C9C;
+	//--color-02: #595959;
+	//--color-01: #161616;
 	--color-accent: #22A0BC;
 	--color-success-green: #C6F4C6;
 
@@ -35,7 +35,7 @@
 
 	--container-width: #{rem(1440)};
 	// внутренние границы(можно посмотреть по mobile макету)
-	--container-padding-x: #{rem(15)};
+	--container-padding-x: #{rem(10)};
 
 	--transition-duration: 0.2s;
 

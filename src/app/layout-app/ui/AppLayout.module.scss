@@ -8,14 +8,7 @@
 
 .content {
   flex-grow: 1;
-  padding: rem(20);
-  //margin-left: rem(300);
   transition: margin-left 0.3s ease;
   height: 100vh;
   overflow-y: auto;
-}
-
-
-.contentCollapsed {
-  //margin-left: rem(80);
 }

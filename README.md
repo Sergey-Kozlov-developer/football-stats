@@ -4,12 +4,12 @@
 
 - 🌍 Сайт скоро будет доступен
 
-[//]: # (- 🌍 Сайт доступен по [ссылке]&#40;https://sergey-kozlov-developer-harry-potter-551d.twc1.net/&#41;")
+- 🌍 Сайт доступен по [ссылке](https://sergey-kozlov-developer-football-stats-c869.twc1.net/)"
 
 - 🌍 Данные из [API](https://sstats.net/)
 
 - 🚀 Стек технологий, которые я использовал в этом проекте:
-    - **React, FSD, RTK Query, Zustand, TypeScript, SCSS**
+    - **React, FSD, RTK Query, TypeScript, SCSS**
 - если у Вас есть обратная связь по проекту, то прошу написать мне в [Telegram](https://t.me/vmfsergeikozlov)
 
 # Если коротко, то:
