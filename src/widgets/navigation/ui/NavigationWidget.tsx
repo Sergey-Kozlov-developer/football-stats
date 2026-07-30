@@ -3,8 +3,7 @@ import styles from './NavigationWidget.module.scss';
 import footballImg from '@assets/img/football.webp'
 import {Menu, MenuItem, Sidebar} from "react-pro-sidebar";
 import {getMenuItemStyles} from "@widgets/navigation/utils/getMenuItemStyles.ts";
-import {useSidebar} from "@features/sidebar/hook/useSideBarContext.tsx";
-import { useMemo} from "react";
+import {useSidebarContext} from "@features/sidebar/hook/useSideBarContext.tsx";
 
 const navItems = [
 	{to: "/", label: "Teams"},
@@ -25,9 +24,9 @@ export const NavigationWidget = () => {
 		toggleCollapse,
 		toggleSidebar,
 		closeSidebar,
-	} = useSidebar()
+	} = useSidebarContext()
 
-	const menuItems = useMemo(() =>
+	const menuItems =
 		navItems.map((item) => (
 			<MenuItem
 				key={item.to}
@@ -37,7 +36,6 @@ export const NavigationWidget = () => {
 				{item.label}
 			</MenuItem>
 		))
-	, [location.pathname])
 
 	return (
 		<>
